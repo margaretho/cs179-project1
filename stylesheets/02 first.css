@@ -1,0 +1,25 @@
+.sticky {   
+    float: left;
+    width: 200px;
+    height: 200px;
+    margin: 5px 5px 5px 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(0,0,0,.2);
+    background-color: yellow;
+    position: relative;
+}
+
+.button {
+    display:inline-block;
+    padding: 0px 2px;
+    font-family: Arial;
+}
+
+#close{
+    float:right;
+}
+
+#new {
+    float:left;
+}
