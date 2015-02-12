@@ -16,7 +16,7 @@ src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"
             var temp = parsed.main.temp;
 
             var text = $('#new-sticky').val();
-            $( ".container" ).append('<div class="sticky"> <button id="close">x</button><p>' + text + temp + '</p></div>');
+            $( ".container" ).append('<div class="sticky"> <button id="close">x</button><p>' + text + '<br>current temperature:' temp + '</p></div>');
             $("button#close").click(function(){
             this.parentNode.parentNode.removeChild(this.parentNode);
         });
