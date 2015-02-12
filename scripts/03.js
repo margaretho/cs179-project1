@@ -1,6 +1,6 @@
 src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"
         var message = document.getElementById("error");
-        
+
         function getLocation() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(getWeather);
@@ -11,7 +11,9 @@ src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"
 
         function getWeather(position) {
             var url = 'api.openweathermap.org/data/2.5/weather?lat=' + position.coords.latitude + '&lon=' + position.coords.longitude;
-            message.innerHTML = url;
+            var jsonString = $.getJSON(url);
+            var jsValue = jQuery.parseJSON(json-string);
+            message.innerHTML = jsValue.main.temp
         }
 
 $(document).ready(function(){
