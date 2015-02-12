@@ -30,7 +30,7 @@ $(document).ready(function(){
         getLocation();
 
         var text = $('#new-sticky').val();
-        $( ".container" ).append('<div class="sticky"> <button id="close">x</button><p>' + text + parsed + '</p></div>');
+        $( ".container" ).append('<div class="sticky"> <button id="close">x</button><p>' + text + '</p></div>');
         $("button#close").click(function(){
         this.parentNode.parentNode.removeChild(this.parentNode);
     });
