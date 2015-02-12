@@ -10,10 +10,10 @@ src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"
         }
 
         function getWeather(position) {
-            var url = 'api.openweathermap.org/data/2.5/weather?lat=' + position.coords.latitude + '&lon=' + position.coords.longitude;
+            var url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + position.coords.latitude + '&lon=' + position.coords.longitude;
             var jsonString = $.getJSON(url);
             var jsValue = jQuery.parseJSON(jsonString);
-            console.log(jsValue.main.temp);
+            message.innerHTML = jsValue.main.temp;
         }
 
 $(document).ready(function(){
