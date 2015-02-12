@@ -18,18 +18,15 @@ $(document).ready(function(){
 
         var message = document.getElementById("error");
     
-        function getLocation() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(getWeather);
             } else {
                 message.innerHTML = "Geolocation is not supported by this browser.";
             }
-        }
 
-        function getWeather(position) {
             var url = 'api.openweathermap.org/data/2.5/weather?lat=' + position.coords.latitude + '&lon=' + position.coords.longitude;
             message.innerHTML = url;
-        }
+
     });
     });
     
