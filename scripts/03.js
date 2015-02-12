@@ -13,7 +13,7 @@ src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"
             var url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + position.coords.latitude + '&lon=' + position.coords.longitude;
             var jsonObj = $.getJSON(url);
             console.log(jsonObj);
-            message.innerHTML = jsonObj.responseJSON.main.temp;
+            message.innerHTML = jsonObj.responseJSON;
         }
 
 $(document).ready(function(){
