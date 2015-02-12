@@ -11,13 +11,8 @@ src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"
 
         function getWeather(position) {
             var url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + position.coords.latitude + '&lon=' + position.coords.longitude;
-            $.ajax({url: url, dataType: "JSON",
-                success: function(result){
-                    console.log(result);
-                    var temp = result.main.temp;
-                    var min = result.main.temp_min;
-                    var max = result.main.temp_max;
-                }});
+            var ajax = $.ajax({url: url, dataType: "JSON",});
+            console.log(ajax)
         }
 
 $(document).ready(function(){
