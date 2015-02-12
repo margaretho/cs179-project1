@@ -13,7 +13,8 @@ src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"
             var url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + position.coords.latitude + '&lon=' + position.coords.longitude;
             var ajax = $.ajax({type: "get", async: false, url: url, dataType: "JSON",});
             var parsed = $.parseJSON(ajax.responseText);
-            console.log(parsed.main.temp);
+            var temp = parsed.main.temp;
+            return temp;
         }
 
 $(document).ready(function(){
@@ -30,7 +31,7 @@ $(document).ready(function(){
         getLocation();
 
         var text = $('#new-sticky').val();
-        $( ".container" ).append('<div class="sticky"> <button id="close">x</button><p>' + text + '</p></div>');
+        $( ".container" ).append('<div class="sticky"> <button id="close">x</button><p>' + text + temp + '</p></div>');
         $("button#close").click(function(){
         this.parentNode.parentNode.removeChild(this.parentNode);
     });
