@@ -15,7 +15,7 @@ src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"
                 success: function(result){
                     console.log(result);
                 });
-            message.innerHTML = jsonObj.responseJSON.main.temp;
+            message.innerHTML = 'hello';
         }
 
 $(document).ready(function(){
