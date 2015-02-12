@@ -14,9 +14,11 @@ src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"
             var ajax = $.ajax({type: "get", async: false, url: url, dataType: "JSON",});
             var parsed = $.parseJSON(ajax.responseText);
             var temp = parsed.main.temp;
+            var min = parsed.main.temp_min;
+            var max = parsed.main.temp_max;
 
             var text = $('#new-sticky').val();
-            $( ".container" ).append('<div class="sticky"> <button id="close">x</button><p>' + text + '<br>current temperature:' + temp + '</p></div>');
+            $( ".container" ).append('<div class="sticky"> <button id="close">x</button><p>' + text + '<br>Current Temperature: ' + temp + 'K' + '<br>Low: ' + min + 'K' + '<br>High: ' + max + 'K' + '</p></div>');
             $("button#close").click(function(){
             this.parentNode.parentNode.removeChild(this.parentNode);
         });
