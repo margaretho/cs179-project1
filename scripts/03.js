@@ -24,14 +24,14 @@ $(document).ready(function(){
     });
 
     $("button#weather").click(function(){
+        getLocation();
+        
         var text = $('#new-sticky').val();
         $( ".container" ).append('<div class="sticky"> <button id="close">x</button><p>' + text + '</p></div>');
         $("button#close").click(function(){
         this.parentNode.parentNode.removeChild(this.parentNode);
 
         var message = document.getElementById("error");
-
-        getLocation();
     });
     });
     
